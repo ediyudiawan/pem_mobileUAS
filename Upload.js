@@ -22,22 +22,22 @@ pilihGambar=()=>{
     //alert('clicked');
     ImagePicker.showImagePicker(options, (response) => {
         console.log('Response = ', response);
-      
+
         if (response.didCancel) {
           console.log('User cancelled image picker');
         } else if (response.error) {
           console.log('ImagePicker Error: ', response.error);
-        }else {      
+        }else {
           // You can also display the image using data:
           // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-      
+
           this.setState({
             avatarSource: { uri: response.uri },
             uri:response.uri,
             fileName: response.fileName
           });
 
-          
+
         }
       });
 }
@@ -45,7 +45,7 @@ pilihGambar=()=>{
 uploadGambar=()=>{
     console.log('mulai upload');
     this.setState({loading:true})
-    
+
     const data = new FormData();
     data.append('fileToUpload', {
         uri: this.state.uri,
@@ -62,9 +62,9 @@ uploadGambar=()=>{
     {
         console.log(responseJson);
         this.setState({loading:false})
-        
+
     });
-        
+
 }
 
 
@@ -89,7 +89,7 @@ uploadGambar=()=>{
                         size="large"
                     />
                 </Modal>
-            
+
                 )
             }
                 <View style={styles.header}>
@@ -101,7 +101,7 @@ uploadGambar=()=>{
                     style={{height:500,width:300,margin:5}}
                     />
                 </View>
-                
+
 
                 <View style={styles.vButton}>
                     <View style={styles.button}>
@@ -142,19 +142,19 @@ header:{
 textHeader:{
     color:'white',
     fontSize:20
-    },  
+    },
 
 gambar: {
     justifyContent:'center',
     alignItems:'center'
-    }, 
+    },
 
 vButton:{
     flex:1,
     flexDirection:'row',
     justifyContent:'center',
     alignItems:'center'
-    },  
+    },
 
 button:{
     flexDirection:'column',
