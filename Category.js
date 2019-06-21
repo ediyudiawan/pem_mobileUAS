@@ -15,7 +15,7 @@ export default class Category extends Component {
     };
   }
   componentDidMount() {
-    axios.get(`https://widhybraneva.000webhostapp.com/atk/getKategoriAtk.php`)
+    axios.get(`https://edi4b104.000webhostapp.com/obat/getObat.php`)
       .then(res => {
         const categories = res.data;
         console.log(categories);
@@ -25,12 +25,11 @@ export default class Category extends Component {
 
   keyExtractor = (item, index) => index.toString()
   renderItem = ({ item }) => (
-    <ListItem 
-      title={item.nama_kategori}
-      leftAvatar={{ source: { uri: prefik_url + item.gambar } }}
+    <ListItem
+      title={item.nama_obat}
       onPress={
         () => {
-          this.props.navigation.navigate('Objek', { id: item.id_kategori, title: item.nama_atk })
+          this.props.navigation.navigate('Objek', { nama: item.nama_obat, title: item.manfaat })
         }
       }
     />
@@ -38,7 +37,7 @@ export default class Category extends Component {
   render() {
     return (
       <View style={styles.container} >
-        <Header judul={"SISTEM INVENTORI ATK"} />
+        <Header judul={"SISTEM MANAJEMEN OBAT"} />
         <FlatList 
           keyExtractor={this.keyExtractor}
           data={this.state.categories}
@@ -46,7 +45,7 @@ export default class Category extends Component {
         />
 
 
-    
+
       </View>
     );
   }
