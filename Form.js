@@ -4,7 +4,7 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity 
 } from 'react-native';
 
 export default class Logo extends Component {
@@ -12,22 +12,22 @@ export default class Logo extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
+          <TextInput style={styles.inputBox} 
+              underlineColorAndroid='rgba(0,0,0,0)' 
               placeholder="Email"
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
-
+              
               />
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
+          <TextInput style={styles.inputBox} 
+              underlineColorAndroid='rgba(0,0,0,0)' 
               placeholder="Password"
               secureTextEntry={true}
               placeholderTextColor = "#ffffff"
-
-              />
-
+    
+              />  
+               
   		</View>
 			)
 	}
@@ -62,5 +62,5 @@ const styles = StyleSheet.create({
     color:'#ffffff',
     textAlign:'center'
   }
-
+  
 });
