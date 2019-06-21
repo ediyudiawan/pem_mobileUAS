@@ -9,23 +9,26 @@ export default class AddCategory extends Component {
     super(props)
 
     this.state = {
-      kode_atk: "",
-      nama_atk: "",
-      harga: "",
-      stok: "",
-      foto: "",
-      id_kategori: "",
+      idobat: "",
+      nama_obat: "",
+      manfaat: "",
+      dikonsumsi_oleh: "",
+      idkategori: "",
+      idgolongan: "",
+      idbentuk: ""
     }
   }
 
   _simpan = () => {
     axios.post('https://widhybraneva.000webhostapp.com/atk/updateAtk.php', {
-      kode_atk: this.state.kode_atk,
-      nama_atk: this.state.nama_atk,
-      harga: this.state.harga,
-      stok: this.state.stok,
-      foto: this.state.foto,
-      id_kategori: this.state.id_kategori,
+      idobat: this.state.idobat,
+      nama_obat: this.state.nama_obat,
+      manfaat: this.state.manfaat,
+      dikonsumsi_oleh: this.state.dikonsumsi_oleh,
+      idkategori: this.state.idkategori,
+      idgolongan: this.state.idgolongan,
+      idbentuk: this.state.idbentuk
+
     })
       .then(function (response) {
         console.log(response);
@@ -38,60 +41,49 @@ export default class AddCategory extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-         <Header judul={"SISTEM INVENTORI ATK"} />
+         <Header judul={"SISTEM MANAJEMEN OBAT"} />
         <View style={{ flex: 1, marginVertical: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
             <View style={{ width: '30%' }}>
-              <Text>Kode ATK : </Text>
+              <Text>Id Obat : </Text>
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(kode_atk) => this.setState({ kode_atk })}
+              onChangeText={(idobat) => this.setState({ idobat })}
               value={this.state.kode_atk}
             />
           </View>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
             <View style={{ width: '30%' }}>
-              <Text>Nama ATK : </Text>
+              <Text>Nama OBAT : </Text>
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(nama_atk) => this.setState({ nama_atk })}
-              value={this.state.nama_atk}
-            />
-          </View>
-          
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
-            <View style={{ width: '30%' }}>
-              <Text>Harga : </Text>
-            </View>
-            <TextInput
-              style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(harga) => this.setState({ harga })}
-              value={this.state.harga}
+              onChangeText={(nama_obat) => this.setState({ nama_obat })}
+              value={this.state.nama_obat}
             />
           </View>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
             <View style={{ width: '30%' }}>
-              <Text>Stok : </Text>
+              <Text>Manfaat : </Text>
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(stok) => this.setState({ stok })}
-              value={this.state.stok}
+              onChangeText={(manfaat) => this.setState({ manfaat })}
+              value={this.state.manfaat}
             />
           </View>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
             <View style={{ width: '30%' }}>
-              <Text>Gambar : </Text>
+              <Text>Dikonsumsi Oleh : </Text>
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(foto) => this.setState({ foto })}
-              value={this.state.foto}
+              onChangeText={(dikonsumsi_oleh) => this.setState({ dikonsumsi_oleh })}
+              value={this.state.dikonsumsi_oleh}
             />
           </View>
 
@@ -101,12 +93,34 @@ export default class AddCategory extends Component {
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(id_kategori) => this.setState({ id_kategori })}
-              value={this.state.id_kategori}
+              onChangeText={(idkategori) => this.setState({ idkategori })}
+              value={this.state.idkategori}
             />
           </View>
 
-      
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
+            <View style={{ width: '30%' }}>
+              <Text>Id Golongan : </Text>
+            </View>
+            <TextInput
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
+              onChangeText={(idgolongan) => this.setState({ idgolongan })}
+              value={this.state.idgolongan}
+            />
+          </View>
+
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
+            <View style={{ width: '30%' }}>
+              <Text>Id Bentuk : </Text>
+            </View>
+            <TextInput
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
+              onChangeText={(idbentuk) => this.setState({ idbentuk })}
+              value={this.state.idbentuk}
+            />
+          </View>
+
+
 
           <TouchableHighlight
             style={{
