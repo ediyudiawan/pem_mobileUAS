@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-   Image 
+   Image
 } from 'react-native';
 
 export default class Logo extends Component {
@@ -11,8 +11,8 @@ export default class Logo extends Component {
 		return(
 			<View style={styles.container}>
 				<Image  style={{width:200, height: 100}}
-          			source={require('../UAS/img/logooo.png')}/>
-          		<Text style={styles.logoText}>Aplikasi Sistem Inventori</Text>	
+          			source={require('../UAS/img/logo.jpg')}/>
+          		<Text style={styles.logoText}>Sistem Manajemen Obat</Text>
   			</View>
 			)
 	}
