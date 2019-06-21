@@ -9,15 +9,13 @@ export default class AddCategory extends Component {
     super(props)
 
     this.state = {
-      kode_atk: "",
-      id_kategori: "",
+      idobat: ""
     }
   }
 
   _simpan = () => {
-    axios.post('https://widhybraneva.000webhostapp.com/atk/hapusAtk.php', {
-      kode_atk: this.state.kode_atk,
-      id_kategori: this.state.id_kategori,
+    axios.post('https://edi4b104.000webhostapp.com/obat/hapusObat.php', {
+      idobat: this.state.idobat
     })
       .then(function (response) {
         console.log(response);
@@ -30,31 +28,18 @@ export default class AddCategory extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-         <Header judul={"SISTEM INVENTORI ATK"} />
+         <Header judul={"SISTEM MANAJEMEN OBAT"} />
         <View style={{ flex: 1, marginVertical: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
             <View style={{ width: '30%' }}>
-              <Text>Kode ATK : </Text>
+              <Text>Id Obat : </Text>
             </View>
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(kode_atk) => this.setState({ kode_atk })}
-              value={this.state.kode_atk}
+              onChangeText={(idobat) => this.setState({ idobat })}
+              value={this.state.idobat}
             />
-          </View>
-
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '5%', marginBottom: 5 }}>
-            <View style={{ width: '30%' }}>
-              <Text>Id Kategori : </Text>
-            </View>
-            <TextInput
-              style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '70%', borderRadius: 5 }}
-              onChangeText={(id_kategori) => this.setState({ id_kategori })}
-              value={this.state.id_kategori}
-            />
-          </View>
-
-      
+          </View>      
 
           <TouchableHighlight
             style={{
